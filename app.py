@@ -27,6 +27,12 @@ st.caption(actorsDf["About"].loc[actorRankingSelected])
 awards = actorsDf["Winnig Awards"].loc[actorRankingSelected]
 st.subheader(f"Winning Awards 🏆: {awards}")
 
+# display Average Rating of all Movies
+avgRating = moviesOfActorSelected["Rating"].mean()
+avgRating = round(avgRating, 1)
+st.subheader(f"Average Rating of all Movies ⭐: {avgRating}")
+st.progress(avgRating/10)
+
 # display all movies of selected actor
 st.subheader(f"All Movies of {actorSelected} (sorted by popularity)")
 st.dataframe(moviesOfActorSelected[["Title", "Year", "Genre", "Rating"]])
