@@ -6,6 +6,10 @@ actorsDf = pd.read_csv(".\\data\\top50Actors.csv")
 moviesDf = pd.read_csv(".\\data\\moviesOfActors.csv")
 actorsDf.index = actorsDf["Ranking"]
 
+st.set_page_config(
+    page_title="Top 50 Actors 📽️🍿",
+    page_icon="📽️"
+)
 st.title("Top 50 Actors 📽️🍿")
 
 topActor = pd.DataFrame()
