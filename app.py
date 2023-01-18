@@ -12,8 +12,9 @@ topActor = pd.DataFrame()
 topActors = actorsDf[["Ranking", "Actor Names"]]
 actorRankingSelected = st.sidebar.selectbox("Select Actor for Details:", topActors)
 
+# sidebar for master-detail view to select actor and get all movie details
 st.sidebar.dataframe(topActors[["Ranking", "Actor Names"]])
-# rendering a dataframe as an interactive table (sorting on every column possible!)
+
 moviesOfActorSelected = pd.DataFrame()
 moviesOfActorSelected = moviesDf[moviesDf["Actor Ranking"] == actorRankingSelected]
 actorSelected = actorsDf["Actor Names"].loc[actorRankingSelected]
@@ -32,6 +33,11 @@ avgRating = moviesOfActorSelected["Rating"].mean()
 avgRating = round(avgRating, 1)
 st.subheader(f"Average Rating of all Movies ⭐: {avgRating}")
 st.progress(avgRating/10)
+
+# display Top 5 rated Movies
+st.subheader("Top 5 Movies (sorted by IMDB-Rating)")
+# rendering a dataframe as an interactive table (sorting on every column possible!)
+st.dataframe(moviesOfActorSelected[["Title", "Year", "Genre", "Rating"]].sort_values("Rating", ascending=False).head(5))
 
 # display all movies of selected actor
 st.subheader(f"All Movies of {actorSelected} (sorted by popularity)")
