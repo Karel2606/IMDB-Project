@@ -1,8 +1,31 @@
-In your Anaconda or code editor environment: 
-    pip install streamlit
+# IMDB Top 50 Actors Web-App with Streamlit
 
-To test if setup works:
+This is a Streamlit web application that displays an IMDb dataset in a Master-Detail-View format, 
+with actor names in the master column and all of the movies of the actors in the details view.
+
+## Requirements
+
+- Python 3.x
+- Streamlit (0.66.0 or higher)
+- pandas
+
+## Setup
+
+1. Clone or download the repository
+2. In your Anaconda or code editor environment install requried packages running: 
+    pip install streamlit
+    pip install pandas
+
+3. To test if setup works:
     streamlit hello
 
-Run streamlit app localy in Browser:
+4. Run streamlit app localy in Browser (served at http://localhost:8501/):
     streamlit run app.py 
+
+## Usage
+
+1. Select an actor from the sidebar
+2. The app will display a dataframe of all the movies of the selected actor
+
+The relativ paths are in Windows format with "\\". When you run this on 
+Linux or Mac-OS replace it with "/"
