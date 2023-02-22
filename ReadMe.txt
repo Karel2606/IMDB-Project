@@ -27,7 +27,8 @@ with actor names in the master column and all of the movies of the actors in the
 ## Usage
 
 1. Select an actor from the sidebar
-2. The app will display a dataframe of all the movies of the selected actor an oter details about the actor
+2. The app will display a dataframe of all the movies of the selected actor an other details about the actor
+3. Second Page can be selected in the left upper corner to see charts
 
 The relativ paths are in Windows format with "\\". When you run this on 
 Linux or Mac-OS replace it with "/"
